@@ -1,0 +1,10 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint:
+      npx eslint .
+      
