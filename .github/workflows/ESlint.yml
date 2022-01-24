@@ -7,9 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout repo
+    - name: Checkout repo
       uses: actions/checkout@v2
     - name: Setup depends
       run: npm install
-    - name: check with eslint
+    - name: Check eslint
       run: npx eslint .
