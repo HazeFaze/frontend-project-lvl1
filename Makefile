@@ -6,3 +6,6 @@ brain-games: #Start brain-games
 
 publish: #publish npm pakage
 		npm publish --dry-run
+
+lint: #eslint parse
+		npx eslint .
