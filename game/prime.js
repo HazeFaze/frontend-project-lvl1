@@ -27,10 +27,13 @@ function gameLoop() {
       winCount += 1;
     } else {
       wrongPlayerAnswer(playerName, playerAnswer, correctAnswer);
-      winCount = 0;
+      break;
     }
   }
-  console.log(`Congratulations, ${playerName}!`);
+
+  if (winCount === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
 }
 
 export default gameLoop;

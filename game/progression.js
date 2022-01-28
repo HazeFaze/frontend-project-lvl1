@@ -15,7 +15,7 @@ function generateProgression() {
   }
   const currentQuestion = {
     progression: currentProgression,
-    progressionLength
+    progressionLength,
   };
 
   return currentQuestion;
@@ -28,7 +28,7 @@ function gameLoop() {
 
   while (winCount !== 3) {
     const currentProgression = generateProgression();
-    const hiddenProgressionNumberIndex = getRandomInt(currentProgression.progressionLength, 0);
+    const hiddenProgressionNumberIndex = getRandomInt(currentProgression.progressionLength - 1, 0);
     const correctAnswer = currentProgression.progression[hiddenProgressionNumberIndex];
     let currentQuestion = '';
 
@@ -48,10 +48,12 @@ function gameLoop() {
       winCount += 1;
     } else {
       wrongPlayerAnswer(playerName, playerAnswer, correctAnswer);
-      winCount = 0;
+      break;
     }
   }
-  console.log(`Congratulation, ${playerName}!`);
+  if (winCount === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
 }
 
 export default gameLoop;

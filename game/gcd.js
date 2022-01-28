@@ -20,7 +20,7 @@ function gameLoop() {
     const currentQuestion = {
       leftNum: getRandomInt(20, 1),
       rightNum: getRandomInt(20, 1),
-      correctAnswer: 0
+      correctAnswer: 0,
     };
     currentQuestion.correctAnswer = nod(currentQuestion.leftNum, currentQuestion.rightNum);
 
@@ -32,11 +32,12 @@ function gameLoop() {
       winCount += 1;
     } else {
       wrongPlayerAnswer(playerName, playerAnswer, currentQuestion.correctAnswer);
-      winCount = 0;
+      break;
     }
   }
-
-  console.log(`Congratulations, ${playerName}!`);
+  if (winCount === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
 }
 
 export default gameLoop;

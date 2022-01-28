@@ -8,7 +8,7 @@ function gameQuestion() {
     leftOperand: getRandomInt(10, 1),
     rightOperand: getRandomInt(10, 1),
     operator: operationsList[getRandomInt(2, 0)],
-    correctAnswer: 0
+    correctAnswer: 0,
   };
 
   switch (currentQuestion.operator) {
@@ -43,10 +43,12 @@ function gameLoop() {
       winCount += 1;
     } else {
       wrongPlayerAnswer(playerName, playerAnswer, currentQuestion.correctAnswer);
-      winCount = 0;
+      break;
     }
   }
-  console.log(`Congratulations, ${playerName}!`);
+  if (winCount === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
 }
 
 export default gameLoop;
