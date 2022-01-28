@@ -17,6 +17,6 @@ export function getRandomInt(max, min) {
 
 /// Функция возвращает сообщения об ошибочном выборе игрока
 export function wrongPlayerAnswer(playerName, playerAnswer, correctAnswer) {
-  console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer is '${correctAnswer}'`);
+  console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer is '${correctAnswer}'.`);
   console.log(`Let's try again, ${playerName}!`);
 }

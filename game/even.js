@@ -12,7 +12,7 @@ function gameLoop() {
     const correctAnswer = currentRandomInt % 2 ? 'no' : 'yes';
 
     console.log(`Question: ${currentRandomInt}`);
-    const playerAnswer = readlineSync.question('Answer: ');
+    const playerAnswer = readlineSync.question('Your answer: ');
 
     if (playerAnswer === correctAnswer) {
       console.log('Correct!');

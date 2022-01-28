@@ -25,7 +25,7 @@ function gameLoop() {
     currentQuestion.correctAnswer = nod(currentQuestion.leftNum, currentQuestion.rightNum);
 
     console.log(`Question: ${currentQuestion.leftNum} ${currentQuestion.rightNum}`);
-    const playerAnswer = readlineSync.question('Answer: ');
+    const playerAnswer = readlineSync.question('Your answer: ');
 
     if (Number(playerAnswer) === currentQuestion.correctAnswer) {
       console.log('Correct!');

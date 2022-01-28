@@ -36,7 +36,7 @@ function gameLoop() {
   while (winCount !== 3) {
     const currentQuestion = gameQuestion();
     console.log(`Question: ${currentQuestion.leftOperand} ${currentQuestion.operator} ${currentQuestion.rightOperand}`);
-    const playerAnswer = readlineSync.question('Answer: ');
+    const playerAnswer = readlineSync.question('Your answer: ');
 
     if (Number(playerAnswer) === currentQuestion.correctAnswer) {
       console.log('Correct!');
